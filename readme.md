@@ -1,5 +1,6 @@
 # EasyHash
-_Making Hashing Simpler in C Sharp_
+_Making Hashing Simpler in C Sharp_   
+[![Build](https://travis-ci.org/midnite81/EasyHash.svg?branch=master)](https://travis-ci.org/midnite81/EasyHash) 
 
 ## Introduction
 
