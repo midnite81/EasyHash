@@ -1,6 +1,10 @@
 # EasyHash
 _Making Hashing Simpler in C Sharp_   
-[![Build](https://travis-ci.org/midnite81/EasyHash.svg?branch=master)](https://travis-ci.org/midnite81/EasyHash) 
+[![Version](https://img.shields.io/nuget/v/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/)&nbsp;
+[![Downloads](https://img.shields.io/nuget/dt/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/)&nbsp; 
+[![Licence](https://img.shields.io/github/license/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/blob/master/LICENSE)&nbsp; 
+[![Build](https://travis-ci.org/midnite81/EasyHash.svg?branch=master)](https://travis-ci.org/midnite81/EasyHash)&nbsp;
+[![Issues](https://img.shields.io/github/issues/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/issues)&nbsp;
 
 ## Introduction
 
