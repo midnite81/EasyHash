@@ -1,20 +1,17 @@
 using System;
 using System.Security.Cryptography;
+using Midnite81.EasyHash.Contracts;
 using Midnite81.EasyHash.Model;
 
 namespace Midnite81.EasyHash
 {
-    public static class Hasher
+    public class Hasher : IHasher
     {
-        private const int SaltByteSize = 24;
-        private const int HashByteSize = 24;
-        private const int HashingIterations = 100000;
-
-        public static Hash MakeHash(
+        public Hash MakeHash(
             string stringToBeHashed,
             byte[] salt = default,
-            int iterations = HashingIterations,
-            int hashByteSize = HashByteSize)
+            int iterations = 100000,
+            int hashByteSize = 24)
         {
             if (salt == default)
             {
@@ -37,7 +34,12 @@ namespace Midnite81.EasyHash
             }
         }
 
-        public static Salt GenerateSalt(int saltByteSize = SaltByteSize)
+        public byte[] ConvertStringToBytes(string hashString)
+        {
+            return Convert.FromBase64String(hashString);
+        }
+
+        public Salt GenerateSalt(int saltByteSize = 24)
         {
             using (var saltGenerator = new RNGCryptoServiceProvider())
             {
@@ -51,13 +53,13 @@ namespace Midnite81.EasyHash
             }
         }
 
-        public static bool VerifyHash(string stringToVerify, byte[] passwordSalt, byte[] passwordHash)
+        public bool VerifyHash(string stringToVerify, byte[] passwordSalt, byte[] passwordHash)
         {
             var computedHash = MakeHash(stringToVerify, passwordSalt).HashBytes;
             return CheckHashes(computedHash, passwordHash);
         }
 
-        private static bool CheckHashes(byte[] firstHash, byte[] secondHash)
+        private bool CheckHashes(byte[] firstHash, byte[] secondHash)
         {
             var minHashLenght = firstHash.Length <= secondHash.Length ? firstHash.Length : secondHash.Length;
             var xor = firstHash.Length ^ secondHash.Length;

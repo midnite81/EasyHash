@@ -8,48 +8,67 @@ namespace Midnite81.EasyHashTests
     [TestClass]
     public class HasherTest
     {
+        private Hasher _sut;
+
+        [TestInitialize]
+        public void Initialise()
+        {
+            _sut = new Hasher();
+        }
+
         [TestMethod]
         public void ItCreatesAHash()
         {
-            var sut = Hasher.MakeHash("password");
+            var makeHash = _sut.MakeHash("password");
 
-            sut.Should().BeOfType<Hash>();
-            sut.HashString.Should().BeOfType<string>();
-            sut.HashString.Should().HaveLength(32);
-            sut.HashBytes.Should().BeOfType<byte[]>();
-            sut.HashBytes.Should().HaveCount(24);
-            sut.Salt.Bytes.Should().BeOfType<byte[]>();
-            sut.Salt.Bytes.Should().HaveCount(24);
+            makeHash.Should().BeOfType<Hash>();
+            makeHash.HashString.Should().BeOfType<string>();
+            makeHash.HashString.Should().HaveLength(32);
+            makeHash.HashBytes.Should().BeOfType<byte[]>();
+            makeHash.HashBytes.Should().HaveCount(24);
+            makeHash.Salt.Bytes.Should().BeOfType<byte[]>();
+            makeHash.Salt.Bytes.Should().HaveCount(24);
         }
 
         [TestMethod]
         public void ItCreatesASalt()
         {
-            var sut = Hasher.GenerateSalt();
+            var salt = _sut.GenerateSalt();
 
-            sut.Should().BeOfType<Salt>();
-            sut.Bytes.Should().HaveCount(24);
-            sut.String.Should().BeOfType<string>();
+            salt.Should().BeOfType<Salt>();
+            salt.Bytes.Should().HaveCount(24);
+            salt.String.Should().BeOfType<string>();
         }
 
         [TestMethod]
         public void ItVerifiesHash()
         {
-            var original = Hasher.MakeHash("password");
+            var original = _sut.MakeHash("password");
 
-            var sut = Hasher.VerifyHash("password", original.Salt.Bytes, original.HashBytes);
+            var verifyHash = _sut.VerifyHash("password", original.Salt.Bytes, original.HashBytes);
 
-            sut.Should().BeTrue();
+            verifyHash.Should().BeTrue();
         }
 
         [TestMethod]
         public void ItReturnsFalseWhenTheNewHashDoesntMatch()
         {
-            var original = Hasher.MakeHash("password");
+            var original = _sut.MakeHash("password");
 
-            var sut = Hasher.VerifyHash("password2", original.Salt.Bytes, original.HashBytes);
+            var verifyHash = _sut.VerifyHash("password2", original.Salt.Bytes, original.HashBytes);
 
-            sut.Should().BeFalse();
+            verifyHash.Should().BeFalse();
+        }
+
+        [TestMethod]
+        public void ItGeneratesBytesFromString()
+        {
+            var original = _sut.MakeHash("password");
+
+            var convert = _sut.ConvertStringToBytes(original.HashString);
+
+            convert.Should().BeOfType<byte[]>();
+            convert.Should().HaveCount(24);
         }
     }
 }
