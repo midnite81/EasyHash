@@ -3,6 +3,15 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <LangVersion>7.1</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Easy Hashing</Title>
+        <Description>A basic C sharp library to help you hash quickly and conveniently</Description>
+        <Copyright>Simon Rogers</Copyright>
+        <PackageProjectUrl>https://centralblue.co.uk/github/EasyHash</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/midnite81/EasyHash/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/midnite81/EasyHash</RepositoryUrl>
+        <RepositoryType>Github</RepositoryType>
+        <PackageTags>Hashing</PackageTags>
     </PropertyGroup>
 
 </Project>
