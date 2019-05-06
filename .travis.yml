@@ -1,6 +1,6 @@
 language: csharp
 mono: none
-dotnet: 2.1.502
+dotnet: 2.2.103
 solution: Midnite81.EasyHash.sln
 script:
   - dotnet restore
