@@ -61,9 +61,9 @@ namespace Midnite81.EasyHash
 
         private bool CheckHashes(byte[] firstHash, byte[] secondHash)
         {
-            var minHashLenght = firstHash.Length <= secondHash.Length ? firstHash.Length : secondHash.Length;
+            var minHashLength = firstHash.Length <= secondHash.Length ? firstHash.Length : secondHash.Length;
             var xor = firstHash.Length ^ secondHash.Length;
-            for (var i = 0; i < minHashLenght; i++)
+            for (var i = 0; i < minHashLength; i++)
                 xor |= firstHash[i] ^ secondHash[i];
             return 0 == xor;
         }
