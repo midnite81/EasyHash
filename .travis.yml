@@ -18,8 +18,6 @@ after_success:
   - echo $REPO_COMMIT_AUTHOR_EMAIL
   - echo $REPO_COMMIT_MESSAGE
   - echo $TRAVIS_JOB_ID
-  - ls -al
-  - ls -al Midnite81.EasyHash.Tests
   - tools/csmacnz.Coveralls --opencover -i Midnite81.EasyHash.Tests/coverage.opencover.xml --repoToken "$TOKEN" --commitId $TRAVIS_COMMIT --commitBranch $TRAVIS_BRANCH --commitAuthor "$REPO_COMMIT_AUTHOR" --commitEmail "$REPO_COMMIT_AUTHOR_EMAIL" --commitMessage "$REPO_COMMIT_MESSAGE" --jobId $TRAVIS_JOB_ID  --serviceName travis-ci  --useRelativePaths
 global:
   - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
