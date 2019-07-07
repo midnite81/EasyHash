@@ -6,7 +6,19 @@ dotnet: 2.2.103
 solution: Midnite81.EasyHash.sln
 script:
   - dotnet restore
-  - dotnet test
+  - dotnet tool install coveralls.net --version 1.0.0 --tool-path tools
+  - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+after_success:
+  - REPO_COMMIT_AUTHOR=$(git show -s --pretty=format:"%cn")
+  - REPO_COMMIT_AUTHOR_EMAIL=$(git show -s --pretty=format:"%ce")
+  - REPO_COMMIT_MESSAGE=$(git show -s --pretty=format:"%s")
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_BRANCH
+  - echo $REPO_COMMIT_AUTHOR
+  - echo $REPO_COMMIT_AUTHOR_EMAIL
+  - echo $REPO_COMMIT_MESSAGE
+  - echo $TRAVIS_JOB_ID
+  - tools/csmacnz.Coveralls --opencover -i Midnite81.HelperExtensions.Tests/coverage.opencover.xml --repoToken "$TOKEN" --commitId $TRAVIS_COMMIT --commitBranch $TRAVIS_BRANCH --commitAuthor "$REPO_COMMIT_AUTHOR" --commitEmail "$REPO_COMMIT_AUTHOR_EMAIL" --commitMessage "$REPO_COMMIT_MESSAGE" --jobId $TRAVIS_JOB_ID  --serviceName travis-ci  --useRelativePaths
 global:
   - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
   - DOTNET_CLI_TELEMETRY_OPTOUT=1

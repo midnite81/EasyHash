@@ -1,11 +1,8 @@
 # EasyHash
 _Making Hashing Simpler in C Sharp_   
-[![Version](https://img.shields.io/nuget/v/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/)&nbsp;
-[![Downloads](https://img.shields.io/nuget/dt/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/)&nbsp; 
-[![Licence](https://img.shields.io/github/license/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/blob/master/LICENSE)&nbsp; 
-[![Build](https://travis-ci.org/midnite81/EasyHash.svg?branch=master)](https://travis-ci.org/midnite81/EasyHash)&nbsp;
-[![Issues](https://img.shields.io/github/issues/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/issues)&nbsp;
-
+[![Version](https://img.shields.io/nuget/v/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/) [![Downloads](https://img.shields.io/nuget/dt/Midnite81.EasyHash.svg)](https://www.nuget.org/packages/Midnite81.EasyHash/) 
+[![Licence](https://img.shields.io/github/license/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/blob/master/LICENSE) 
+[![Build](https://travis-ci.org/midnite81/EasyHash.svg?branch=master)](https://travis-ci.org/midnite81/EasyHash) [![Coverage Status](https://coveralls.io/repos/github/midnite81/EasyHash/badge.svg?branch=master)](https://coveralls.io/github/midnite81/EasyHash?branch=master) [![Issues](https://img.shields.io/github/issues/midnite81/EasyHash.svg)](https://github.com/midnite81/EasyHash/issues) 
 ## Introduction
 
 This is a simple project in which it make hashing simpler and cleaner
