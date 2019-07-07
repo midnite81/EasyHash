@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midnite81.EasyHash", "Midnite81.EasyHash\Midnite81.EasyHash.csproj", "{E6250CE8-8E1C-4E66-866F-C3B6C127E487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midnite81.EasyHashTests", "Midnite81.EasyHashTests\Midnite81.EasyHashTests.csproj", "{953B5770-9D0C-4734-847E-4C79EFE73EE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midnite81.EasyHash.Tests", "Midnite81.EasyHash.Tests\Midnite81.EasyHash.Tests.csproj", "{953B5770-9D0C-4734-847E-4C79EFE73EE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
